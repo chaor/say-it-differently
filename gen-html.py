@@ -32,7 +32,7 @@ tr:nth-child(even) {
 """
 TR_TEMPLATE = """
   <tr>
-    <td>{english}</td>
+    <td><font color="#0000ff">{english}</font></td>
     <td>{annotation}</td>
     <td>{chinese}</td>
   </tr>
