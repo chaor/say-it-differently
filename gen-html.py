@@ -46,10 +46,15 @@ HTML_2ND_HALF = """
 
 
 html = HTML_1ST_HALF
+words = set()
 
 with open(INPUT_FILE, 'r') as f_r:
     for line in f_r:
         english, annotation, chinese = line.strip().split(':')
+        # duplicate checking
+        if english in words:
+            raise Exception('duplicated words: ' + english)
+        words.add(english)
         html += TR_TEMPLATE.format(
             english=english,
             annotation=annotation,
